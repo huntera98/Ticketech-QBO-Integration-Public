@@ -4,7 +4,7 @@
 **Ticketech-QBO Sync**
 
 **Effective Date:** March 4, 2025
-**Last Updated:** March 4, 2025
+**Last Updated:** March 16, 2026
 
 ---
 
@@ -25,9 +25,15 @@ When you connect your accounts to the Application, you authorize us to access:
 - **Ticketech account data** — including billing records, account identifiers, transaction history, and related accounts receivable data
 - **QuickBooks Online account data** — including customer records, invoice data, and general ledger information necessary to complete the sync
 
-### 2b. Authentication Credentials
+### 2b. Authentication Credentials and OAuth Scopes
 
 The Application uses OAuth 2.0 to connect to QuickBooks Online. We do not store your Intuit username or password. OAuth tokens are stored securely and used solely to perform authorized sync operations on your behalf.
+
+The Application requests the following QuickBooks Online OAuth scope:
+
+- **`com.intuit.quickbooks.accounting`** — Allows the Application to read and write accounting data in your QuickBooks Online company file, including customers, items, sales receipts, and related transaction records necessary to perform the sync
+
+No other Intuit scopes are requested. The Application does not access your Intuit profile information, payroll data, or payment processing data.
 
 Access to Ticketech data is facilitated through API credentials you provide. These credentials are stored in encrypted form and used only to retrieve data necessary for the sync.
 
@@ -71,23 +77,41 @@ Digital Therapy does not sell, rent, or trade your data. We may share informatio
 
 We retain sync logs and operational data for a period of up to twelve (12) months, after which it is deleted or anonymized. OAuth tokens and API credentials are retained only as long as your account remains active and are deleted promptly upon account termination or revocation.
 
-You may request deletion of your data at any time by contacting us at the address listed in Section 10.
+You may request deletion of your data at any time by contacting us at the address listed in Section 11.
 
 ---
 
-## 6. Data Security
+## 6. Disconnection and Data Handling
+
+You may disconnect the Application from your QuickBooks Online account at any time by:
+
+- Revoking access through your Intuit account settings at [https://accounts.intuit.com](https://accounts.intuit.com), or
+- Contacting us directly at the address listed in Section 11
+
+Upon disconnection:
+
+- The Application will immediately stop accessing your QuickBooks Online account and cease all sync operations
+- OAuth tokens and stored API credentials associated with your account will be deleted promptly
+- Data that was previously synchronized into your QuickBooks Online account will remain in your QBO company file. This data is yours and resides within your own accounting system. Digital Therapy does not modify or remove previously synced records upon disconnection.
+- Operational logs (sync timestamps, error reports) will be retained for up to twelve (12) months as described in Section 5, then deleted or anonymized
+
+If you wish to have all stored data deleted immediately upon disconnection, please contact us and we will process your request within a commercially reasonable timeframe.
+
+---
+
+## 7. Data Security
 
 We implement industry-standard technical and organizational safeguards to protect your data, including encryption in transit (TLS) and at rest for stored credentials. However, no system is completely secure, and we cannot guarantee absolute security. You are responsible for maintaining the security of your own account credentials and for promptly notifying us of any suspected unauthorized access.
 
 ---
 
-## 7. Intuit QuickBooks Online
+## 8. Intuit QuickBooks Online
 
-The Application is built on the Intuit QuickBooks Online API platform. By using the Application, you agree to Intuit's terms of service and privacy policy, available at [https://www.intuit.com/privacy/statement/](https://www.intuit.com/privacy/statement/). Digital Therapy's use of QuickBooks Online data is limited to the purposes described in this policy and is consistent with Intuit's developer data use requirements.
+The Application is built on the Intuit QuickBooks Online API platform. By using the Application, you agree to Intuit's terms of service, available at [https://www.intuit.com/legal/terms/](https://www.intuit.com/legal/terms/), and Intuit's privacy statement, available at [https://www.intuit.com/privacy/statement/](https://www.intuit.com/privacy/statement/). Digital Therapy's use of QuickBooks Online data is limited to the purposes described in this policy and is consistent with Intuit's developer data use requirements.
 
 ---
 
-## 8. Your Rights and Choices
+## 9. Your Rights and Choices
 
 Depending on your jurisdiction, you may have the right to:
 
@@ -96,19 +120,19 @@ Depending on your jurisdiction, you may have the right to:
 - Request deletion of your data
 - Withdraw consent or revoke connected account authorizations at any time
 
-To exercise any of these rights, please contact us using the information in Section 10. We will respond to verifiable requests within a commercially reasonable timeframe.
+To exercise any of these rights, please contact us using the information in Section 11. We will respond to verifiable requests within a commercially reasonable timeframe.
 
 You may revoke the Application's access to your QuickBooks Online account at any time through your Intuit account settings at [https://accounts.intuit.com](https://accounts.intuit.com).
 
 ---
 
-## 9. Changes to This Policy
+## 10. Changes to This Policy
 
 We may update this Privacy Policy from time to time. We will notify you of material changes by updating the "Last Updated" date above and, where practicable, by providing notice through the Application or via email. Continued use of the Application following any update constitutes your acceptance of the revised policy.
 
 ---
 
-## 10. Contact
+## 11. Contact
 
 If you have questions, concerns, or requests regarding this Privacy Policy, please contact:
 
